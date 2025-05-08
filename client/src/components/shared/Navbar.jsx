@@ -6,14 +6,16 @@ import {
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
 import React from "react";
-import { FaCaretDown } from "react-icons/fa";
+import { FaCaretDown, FaCaretRight, FaTheaterMasks } from "react-icons/fa";
+import { BiSolidMoviePlay } from "react-icons/bi";
+import { GiMicrophone } from "react-icons/gi";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between bg-[#2A2E34] h-15">
-      {/* <span className="text-[1.5rem] text-[#E9EAEC] mx-15">Eventix</span> */}
+    <div className="flex items-center justify-between bg-[#2A2E34] h-18">
+      <span className="text-[1.8rem] text-[#E9EAEC] font-serif mx-15">Eventix</span>
 
-      <svg width="91" height="36" viewBox="0 0 91 36" fill="none" className="mx-15">
+      {/* <svg width="91" height="36" viewBox="0 0 91 36" fill="none" className="mx-15">
         <path
           d="M37.3633 14.7363L36.6938 24.1484H26.3977L25.7286 19.5583L32.582 20.6883L33.1979 17.5684L25.431 16.2371L24.8709 13.1807L27.528 7.14665L35.575 7.14883L34.3695 11.1559L30.1294 11.2018L29.413 12.8285L37.3633 14.7363Z"
           fill="#F2EBE3"
@@ -108,7 +110,7 @@ const Navbar = () => {
             ></rect>
           </clipPath>
         </defs>
-      </svg>
+      </svg> */}
 
       <div className="flex items-center justify-between gap-30 mx-10">
         <DropdownMenu>
@@ -116,11 +118,11 @@ const Navbar = () => {
             Events
             <FaCaretDown />
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+          <DropdownMenuContent className='flex flex-col items-start gap-2 text-[#2A2E34] font-semibold'>
+            <DropdownMenuItem className='flex items-center justify-between'>Movies <div><BiSolidMoviePlay/></div> </DropdownMenuItem>
+            <DropdownMenuItem className='flex items-center justify-between'>Comedy Shows <FaTheaterMasks /> </DropdownMenuItem>
+            <DropdownMenuItem className='flex items-center justify-between'>Music Shows <GiMicrophone/> </DropdownMenuItem>
+            <DropdownMenuItem className='flex gap-0'>See All <div className="mt-0.5"> <FaCaretRight/> </div></DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
